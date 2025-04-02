@@ -11,7 +11,7 @@ public class OutraCoisaController {
         value = "/outra", 
         produces = MediaType.TEXT_PLAIN_VALUE)
     public String outra() {
-        return "Outra Coisa";
+        return "Outra Coisa!!!";
     }
 
 }
