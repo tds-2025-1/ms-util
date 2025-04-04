@@ -8,9 +8,8 @@ group = 'br.edu.ifrs.riogrande.tads.tds'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	//Trocar para a versão 17 antes de subir a branch
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(22)
+		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
 
