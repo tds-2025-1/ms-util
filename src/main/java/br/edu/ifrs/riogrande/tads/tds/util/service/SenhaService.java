@@ -37,7 +37,7 @@ public class SenhaService {
 
     private int calculoForcaSenha(String senha) {
         int forcaSenha = 0;
-        if (senha.length() >= 4 && senha.length() < 7) {
+        if (senha.length() >= 4 && senha.length() <= 7) {
             forcaSenha++;
         } else if (senha.length() > 7) {
             forcaSenha += 4;
