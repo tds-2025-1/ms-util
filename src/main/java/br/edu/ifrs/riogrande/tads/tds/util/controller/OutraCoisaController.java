@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class OutraCoisaController {
 
-    @GetMapping(
-        value = "/outra", 
-        produces = MediaType.TEXT_PLAIN_VALUE)
+    @GetMapping(value = "/outra", produces = MediaType.TEXT_PLAIN_VALUE)
     public String outra() {
         return "Outra Coisa!!!";
     }
