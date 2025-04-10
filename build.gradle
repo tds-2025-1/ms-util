@@ -29,7 +29,7 @@ dependencies {
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'	
-
+	implementation 'com.github.f4b6a3:uuid-creator:6.1.0'
 }
 
 tasks.named('test') {
