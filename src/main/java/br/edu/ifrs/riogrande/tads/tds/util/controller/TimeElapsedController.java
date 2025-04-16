@@ -1,4 +1,4 @@
-package main.java.br.edu.ifrs.riogrande.tads.tds.util.controller;
+package br.edu.ifrs.riogrande.tads.tds.util.controller;
 
 import br.edu.ifrs.riogrande.tads.tds.util.dto.TimeElapsedRequest;
 import br.edu.ifrs.riogrande.tads.tds.util.dto.TimeElapsedResponse;
