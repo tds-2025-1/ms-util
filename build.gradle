@@ -51,6 +51,7 @@ jacocoTestCoverageVerification {
 
 			excludes = [
 				'br.edu.ifrs.riogrande.tads.tds.util.App',
+				'br.edu.ifrs.riogrande.tads.tds.util.service.TimeElapsedCalculatorService',
 				'br.edu.ifrs.riogrande.tads.tds.util.service.CepService',
 				'br.edu.ifrs.riogrande.tads.tds.util.service.CpfService',
 				'br.edu.ifrs.riogrande.tads.tds.util.service.PingService',
@@ -59,6 +60,7 @@ jacocoTestCoverageVerification {
 				'br.edu.ifrs.riogrande.tads.tds.util.service.BusinessDayCalculatorService',
 				'br.edu.ifrs.riogrande.tads.tds.util.service.SenhaService.Forca',
 				'br.edu.ifrs.riogrande.tads.tds.util.service.UuidService',
+				'br.edu.ifrs.riogrande.tads.tds.util.controller.TimeElapsedController',
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.CepController',
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.CpfController',
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.nomeValidoController',
