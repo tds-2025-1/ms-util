@@ -68,6 +68,7 @@ jacocoTestCoverageVerification {
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.ForcaSenhaController',
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.PingController',
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.UuidController',
+				'br.edu.ifrs.riogrande.tads.tds.util.controller.ColorController',
 				'br.edu.ifrs.riogrande.tads.tds.util.config.*',
 				'br.edu.ifrs.riogrande.tads.tds.util.repository.*',
 				'br.edu.ifrs.riogrande.tads.tds.util.entity.*'
