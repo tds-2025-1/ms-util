@@ -71,7 +71,10 @@ jacocoTestCoverageVerification {
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.ColorController',
 				'br.edu.ifrs.riogrande.tads.tds.util.config.*',
 				'br.edu.ifrs.riogrande.tads.tds.util.repository.*',
-				'br.edu.ifrs.riogrande.tads.tds.util.entity.*'
+				'br.edu.ifrs.riogrande.tads.tds.util.entity.*',
+				'br.edu.ifrs.riogrande.tads.tds.util.service.GeradorSenhaService',
+				'br.edu.ifrs.riogrande.tads.tds.util.dto.SenhaConfig',
+				'br.edu.ifrs.riogrande.tads.tds.util.controller.GeradorSenhaController',
 			]
 		}
 	}
