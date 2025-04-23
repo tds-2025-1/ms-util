@@ -15,6 +15,9 @@ public class PingController {
         this.pingService = pingService;
     }
 
+    // status: 200
+    // header Content-Type: text/plain
+    // body content: pong
     @GetMapping(
         value = "/ping", 
         produces = MediaType.TEXT_PLAIN_VALUE)
