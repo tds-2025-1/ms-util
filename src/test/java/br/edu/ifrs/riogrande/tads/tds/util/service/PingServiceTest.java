@@ -10,7 +10,8 @@ public class PingServiceTest {
     // Teste Unitário (Unit Test: testar um módulo (classe))
     PingService pingService;
     
-    @BeforeEach
+    // instanciar o PingService antes de cada teste
+    @BeforeEach 
     void setup() {
         pingService = new PingService();
     }
