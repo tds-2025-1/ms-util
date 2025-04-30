@@ -50,6 +50,7 @@ jacocoTestCoverageVerification {
 			}
 
 			excludes = [
+				'br.edu.ifrs.riogrande.tads.tds.util.controller.dto.*',
 				'br.edu.ifrs.riogrande.tads.tds.util.App',
 				'br.edu.ifrs.riogrande.tads.tds.util.service.TimeElapsedCalculatorService',
 				'br.edu.ifrs.riogrande.tads.tds.util.service.CepService',
