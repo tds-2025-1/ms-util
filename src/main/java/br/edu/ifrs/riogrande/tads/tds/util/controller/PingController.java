@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.edu.ifrs.riogrande.tads.tds.util.controller.dto.ApiResponse;
 import br.edu.ifrs.riogrande.tads.tds.util.controller.dto.PingResponseDTOV2;
 import br.edu.ifrs.riogrande.tads.tds.util.controller.dto.PingResponseDTOV3;
 import br.edu.ifrs.riogrande.tads.tds.util.service.PingService;
@@ -73,6 +74,14 @@ public class PingController {
 
         return PingResponseDTOV3.of(resp);
     }
-    
+   @GetMapping(
+        value = "/api/v4/ping", 
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    public ApiResponse<PingResponseDTOV3> pingV4() {
+        // {"versao": 1, "result": "pong", "dateTime": ...}
+        String resp = pingService.ping();
+
+        return new ApiResponse<PingResponseDTOV3>(PingResponseDTOV3.of(resp));
+    } 
 
 }
