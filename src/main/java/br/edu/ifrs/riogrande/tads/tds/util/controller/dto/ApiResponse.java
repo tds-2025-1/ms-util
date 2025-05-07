@@ -3,14 +3,14 @@ package br.edu.ifrs.riogrande.tads.tds.util.controller.dto;
 
 public class ApiResponse<T> {
     
-    private final T response;
+    private final T data;
 
-    public ApiResponse(T response) {
-        this.response = response;
+    public ApiResponse(T data) {
+        this.data = data;
     }
 
-    public T getResponse() {
-        return response;
+    public T getData() {
+        return data;
     }
 
 }
