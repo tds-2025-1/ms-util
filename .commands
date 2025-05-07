@@ -1,0 +1,5 @@
+docker build -t cobaia .
+docker images
+echo _____ | docker login ghcr.io -u profmarciotorres --password-stdin
+docker tag cobaia ghcr.io/tds-2025-1/cobaia:latest
+docker push ghcr.io/tds-2025-1/cobaia:latest
