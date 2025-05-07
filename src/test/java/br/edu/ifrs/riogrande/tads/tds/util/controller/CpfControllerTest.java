@@ -30,4 +30,15 @@ class CpfControllerTest {
                 .andExpect(content().contentType("text/plain;charset=UTF-8"))
                 .andExpect(content().string(mockedCpf));
     }
+
+    @Test
+    void shouldReturnMockedCpfInJsonFormatWithStatus200() throws Exception {
+        String mockedCpf = "191.336.000-82";
+        when(cpfService.generateCpf()).thenReturn(mockedCpf);
+
+        mockMvc.perform(get("/api/v1/cpf"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json"))
+                .andExpect(jsonPath("$.data").value(mockedCpf));
+    }
 }
