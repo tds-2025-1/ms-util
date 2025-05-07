@@ -18,7 +18,7 @@ public class SenhaService {
         INVÁLIDO
     }
 
-    private Forca nivelSenha(int forca) {
+    Forca nivelSenha(int forca) {
         if (forca >= 0 && forca <= 10) {
             if (forca < 3) {
                 return Forca.MUITO_FRACA;
@@ -28,14 +28,14 @@ public class SenhaService {
                 return Forca.INTERMEDIÁRIA;
             } else if (forca < 9) {
                 return Forca.FORTE;
-            } else if (forca >= 10) {
+            } else if (forca <= 10) {
                 return Forca.MUITO_FORTE;
             }
         }
         return Forca.INVÁLIDO;
     }
 
-    private int calculoForcaSenha(String senha) {
+    int calculoForcaSenha(String senha) {
         int forcaSenha = 0;
         if (senha.length() >= 4 && senha.length() <= 7) {
             forcaSenha++;
