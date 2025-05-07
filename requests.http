@@ -1,0 +1,23 @@
+### PING TEXT/PLAIN (legacy)
+
+GET /ping HTTP/1.1
+Host: localhost:8080
+
+### PING V1 (application/json) Content Type, Media Type MIME Type, via Query Param
+
+GET /ping?version=1 HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+### PING V2 (application/json) via Header
+
+GET /ping HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+X-TADS-Version: 2
+
+### PING V3
+
+GET /ping HTTP/1.1
+Host: localhost:8080
+Accept: application/vnd.tads-ms-util.v3+json
