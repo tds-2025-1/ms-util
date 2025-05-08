@@ -27,3 +27,14 @@ Accept: application/vnd.tads-ms-util.v3+json
 GET /api/v1/forca-senha/aaa
 Host: localhost:8080
 Accept: application/json
+
+### Teste BusinessDay v1
+
+POST /api/date/v1/business-days HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "startDate": "2025-05-07",
+  "businessDays": 5
+}
