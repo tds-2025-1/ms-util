@@ -34,3 +34,33 @@ Content-Type: application/json
   "startDate": "2025-05-07",
   "businessDays": 5
 }
+
+### PING V4 (Path Versioning)
+
+GET /api/v4/ping HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+### TIME ELAPSED (legacy)
+
+POST /api/time/elapsed HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "startTime": "10:00:00",
+  "endTime": "15:30:45"
+}
+
+### TIME ELAPSED V2 (Path Versioning)
+
+POST /api/time/v2/elapsed HTTP/1.1
+Host: localhost:8081
+Content-Type: application/json
+Accept: application/json
+
+{
+  "startTime": "10:00:00",
+  "endTime": "15:30:45"
+}
+ 
