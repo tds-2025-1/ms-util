@@ -2,6 +2,9 @@ package br.edu.ifrs.riogrande.tads.tds.util.controller;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.MediaType;
+
+import br.edu.ifrs.riogrande.tads.tds.util.controller.dto.ApiResponse;
+import br.edu.ifrs.riogrande.tads.tds.util.controller.dto.IpResponseDTOV1;
 import br.edu.ifrs.riogrande.tads.tds.util.service.IpService;
 import java.util.List;
 import java.util.Arrays;
@@ -26,12 +29,12 @@ public class IpController {
     }
 
     @GetMapping(value = "/api/v1/ips/{baseIp}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<String> generateIpsV1(@PathVariable String baseIp) {
+    public ApiResponse<IpResponseDTOV1> generateIpsV1(@PathVariable String baseIp) {
         try {
             String ips = ipService.generateUniqueIps(baseIp);
-            return Arrays.asList(ips.split("\n"));
+            return new ApiResponse<>(IpResponseDTOV1.of(Arrays.asList(ips.split("\n"))));
         } catch (IllegalArgumentException e) {
-            return List.of("Erro: " + e.getMessage());
+            return new ApiResponse<>(IpResponseDTOV1.of(List.of("Erro: " + e.getMessage())));
         }
     }
 }
