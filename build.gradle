@@ -57,6 +57,7 @@ jacocoTestCoverageVerification {
 //				'br.edu.ifrs.riogrande.tads.tds.util.service.CpfService',
 //				'br.edu.ifrs.riogrande.tads.tds.util.service.PingService',
 //				'br.edu.ifrs.riogrande.tads.tds.util.service.SenhaService',
+//				'br.edu.ifrs.riogrande.tads.tds.util.service.IpService',
 
 				'br.edu.ifrs.riogrande.tads.tds.util.service.nomeValidoService',
 				'br.edu.ifrs.riogrande.tads.tds.util.service.BusinessDayCalculatorService',
@@ -69,6 +70,7 @@ jacocoTestCoverageVerification {
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.BusinessDayController',
 //				'br.edu.ifrs.riogrande.tads.tds.util.controller.ForcaSenhaController',
 //				'br.edu.ifrs.riogrande.tads.tds.util.controller.PingController',
+//				'br.edu.ifrs.riogrande.tads.tds.util.controller.IpController',
 
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.UuidController',
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.ColorController',
