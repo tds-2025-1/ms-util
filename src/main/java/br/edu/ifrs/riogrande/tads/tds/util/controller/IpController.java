@@ -32,9 +32,9 @@ public class IpController {
     public ApiResponse<IpResponseDTOV1> generateIpsV1(@PathVariable String baseIp) {
         try {
             String ips = ipService.generateUniqueIps(baseIp);
-            return new ApiResponse<>(IpResponseDTOV1.of(Arrays.asList(ips.split("\n"))));
+            return new ApiResponse<IpResponseDTOV1>(IpResponseDTOV1.of(Arrays.asList(ips.split("\n"))));
         } catch (IllegalArgumentException e) {
-            return new ApiResponse<>(IpResponseDTOV1.of(List.of("Erro: " + e.getMessage())));
+            return new ApiResponse<IpResponseDTOV1>(IpResponseDTOV1.of(List.of("Erro: " + e.getMessage())));
         }
     }
 }
