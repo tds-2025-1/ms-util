@@ -9,7 +9,7 @@ import br.edu.ifrs.riogrande.tads.tds.util.dto.RGB;
 public class ColorService {
 
 
-    public HSL RgbParaHsl(RGB cor){
+    public HSL rgbParaHsl(RGB cor){
 
         float rf = cor.r() / 255f;
         float gf = cor.g() / 255f;

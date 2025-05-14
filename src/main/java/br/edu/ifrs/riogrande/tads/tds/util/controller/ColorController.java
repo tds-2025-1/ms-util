@@ -16,14 +16,19 @@ import br.edu.ifrs.riogrande.tads.tds.util.service.ColorService;
 @RequestMapping("/api")
 public class ColorController {
 
+                                            //  path param
+    // https://comercio.com.br/produto/adicionar/3424323/riogrande
+                                            // request param
+    // https://comercio.com.br/produto/adicionar?id=3424323&cidade=riogrande
+
+
     private final ColorService colorService;
 
     ColorController(ColorService colorService){
-
         this.colorService = colorService;
     }
 
-        @GetMapping("/rgb-to-hsl")
+    @GetMapping("/rgb-to-hsl")
     public String convertRgbToHsl(@RequestParam String rgb) {
         // Decode the RGB input to handle any URL-encoded characters
         try {
