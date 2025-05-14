@@ -19,7 +19,7 @@ public class IpController {
     }
 
     @Deprecated(since = "2025-05-10", forRemoval = false)
-    @GetMapping(value = "/{baseIp}", produces = MediaType.TEXT_PLAIN_VALUE)
+    @GetMapping(value = "/ips/{baseIp}", produces = MediaType.TEXT_PLAIN_VALUE)
     public String generateIps(@PathVariable String baseIp) {
         try {
             return ipService.generateUniqueIps(baseIp);
