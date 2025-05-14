@@ -1,17 +1,29 @@
 package br.edu.ifrs.riogrande.tads.tds.util.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import java.net.URLDecoder;
-import java.io.UnsupportedEncodingException;
+
+import br.edu.ifrs.riogrande.tads.tds.util.dto.HSL;
+import br.edu.ifrs.riogrande.tads.tds.util.dto.RGB;
+import br.edu.ifrs.riogrande.tads.tds.util.service.ColorService;
 
 @RestController
 @RequestMapping("/api")
 public class ColorController {
 
-    @GetMapping("/rgb-to-hsl")
+    private final ColorService colorService;
+
+    ColorController(ColorService colorService){
+
+        this.colorService = colorService;
+    }
+
+        @GetMapping("/rgb-to-hsl")
     public String convertRgbToHsl(@RequestParam String rgb) {
         // Decode the RGB input to handle any URL-encoded characters
         try {
@@ -21,45 +33,22 @@ public class ColorController {
         }
 
         // Validate the format of the hex color code (for example, #RRGGBB)
-        if (!rgb.matches("^#([A-Fa-f0-9]{6})$")) {
-            return "Invalid format. Use #RRGGBB.";
+        if (!rgb.matches("^#?[A-Fa-f0-9]{6}$")) {
+        return "Invalid format. Use #RRGGBB.";
         }
+
+        if (rgb.startsWith("#")) {
+            rgb = rgb.substring(1); // remove o '#'
+        }
+
 
         // Proceed with the RGB to HSL conversion...
-        int r = Integer.parseInt(rgb.substring(1, 3), 16);
-        int g = Integer.parseInt(rgb.substring(3, 5), 16);
-        int b = Integer.parseInt(rgb.substring(5, 7), 16);
+        int r = Integer.parseInt(rgb.substring(0, 2), 16);
+        int g = Integer.parseInt(rgb.substring(2, 4), 16);
+        int b = Integer.parseInt(rgb.substring(4, 6), 16);
 
-        float rf = r / 255f;
-        float gf = g / 255f;
-        float bf = b / 255f;
+        HSL cor = colorService.RgbParaHsl(new RGB(r, g, b));
 
-        float max = Math.max(rf, Math.max(gf, bf));
-        float min = Math.min(rf, Math.min(gf, bf));
-
-        float h, s, l;
-        l = (max + min) / 2;
-
-        if (max == min) {
-            h = s = 0;
-        } else {
-            float d = max - min;
-            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-
-            if (max == rf) {
-                h = (gf - bf) / d + (gf < bf ? 6 : 0);
-            } else if (max == gf) {
-                h = (bf - rf) / d + 2;
-            } else {
-                h = (rf - gf) / d + 4;
-            }
-            h /= 6;
-        }
-
-        int H = Math.round(h * 360);
-        int S = Math.round(s * 100);
-        int L = Math.round(l * 100);
-
-        return String.format("HSL(%d, %d%%, %d%%)", H, S, L);
+        return String.format("HSL(%d, %d%%, %d%%)", cor.h(), cor.s(), cor.l());
     }
 }
