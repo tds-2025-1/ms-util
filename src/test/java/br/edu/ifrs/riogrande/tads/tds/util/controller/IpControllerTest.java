@@ -30,7 +30,7 @@ public class IpControllerTest {
                 when(ipService.generateUniqueIps("192.168.1.1"))
                                 .thenReturn(mockResponse);
 
-                mockMvc.perform(get("/192.168.1.1"))
+                mockMvc.perform(get("/ips/192.168.1.1"))
                                 .andExpect(status().isOk())
                                 .andExpect(content().contentType(MediaType.TEXT_PLAIN_VALUE + ";charset=UTF-8"))
                                 .andExpect(content().string(mockResponse));
