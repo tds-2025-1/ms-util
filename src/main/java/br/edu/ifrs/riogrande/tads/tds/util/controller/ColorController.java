@@ -52,7 +52,7 @@ public class ColorController {
         int g = Integer.parseInt(rgb.substring(2, 4), 16);
         int b = Integer.parseInt(rgb.substring(4, 6), 16);
 
-        HSL cor = colorService.RgbParaHsl(new RGB(r, g, b));
+        HSL cor = colorService.rgbParaHsl(new RGB(r, g, b));
 
         return String.format("HSL(%d, %d%%, %d%%)", cor.h(), cor.s(), cor.l());
     }
