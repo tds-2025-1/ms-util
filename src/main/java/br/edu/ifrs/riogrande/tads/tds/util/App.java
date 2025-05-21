@@ -10,3 +10,6 @@ public class App {
 		SpringApplication.run(App.class, args);
 	}
 }
+
+//./gradlew clean test jacocoTestReport
+//xdg-open build/reports/jacoco/test/html/index.html
