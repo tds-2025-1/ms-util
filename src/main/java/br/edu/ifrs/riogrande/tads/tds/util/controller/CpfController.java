@@ -20,6 +20,7 @@ public class CpfController {
     @Deprecated(since = "2025-05-07", forRemoval = false)
     @GetMapping(value = "/cpf", produces = MediaType.TEXT_PLAIN_VALUE)
     public String cpf() {
+        // Adicionando Comentário
         return this.cpfService.generateCpf();
     }
 
