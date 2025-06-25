@@ -6,7 +6,25 @@ plugins {
 }
 
 group = 'br.edu.ifrs.riogrande.tads.tds'
-version = '0.0.1-SNAPSHOT'
+//         SEMVER-SUFIX
+// SEMantic VERsioning (Versionamento Semântico)
+// três números independentes separados por ponto (não é um decimal ou inteiro)
+// 2.4.2   2.4.12    2.3.1-alpha-1 2.3.1-beta-1 2.3.1-rc-1
+// (release canditate -> mais próxima da versão final),
+// 2.3.1 (versão final - production ready) 2.3.1-GA (General Available)
+// snapshot -> instantâneo (versão de desenvolvimento)
+// MAJOR.MINOR.PATCH[-SUFFIX=alpha-1,beta-1,rc.1]
+// MAJOR -> ALTERAÇÃO QUE NÃO SÃO RETROCOMPATÍVEIS
+// MINOR -> FUNCIONALIDADES QUE SÃO RETROCOMPATÍVEIS
+// PATCH -> "REMENDO", CORREÇÃO DE BUGS E DEFEITOS
+// 2.14.64
+// 3.0.3
+// 3.1.123
+// 3.2.0-beta-1
+// 3.2.0
+// 
+// lib crypto, Crypto.encode(..., )
+version = '0.0.1'
 
 java {
 	toolchain {
