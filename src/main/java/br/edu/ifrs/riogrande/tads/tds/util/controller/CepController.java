@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/cep")
+@RequestMapping("/api")
 public class CepController {
 
     private final CepService cepService;

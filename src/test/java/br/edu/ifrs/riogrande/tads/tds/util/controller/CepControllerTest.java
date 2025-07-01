@@ -27,11 +27,11 @@ class CepControllerTest {
 
         when(cepService.buscarDadosCep("96202350")).thenReturn(response);
 
-        mockMvc.perform(get("/v1/cep/96202350"))
+        mockMvc.perform(get("/api/v1/cep/96202350")) // Corrigido aqui
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
                 .andExpect(jsonPath("$.cep").value("96202350"))
-                .andExpect(jsonPath("$.logradouro").value("Rua General Osório"));
+                .andExpect(jsonPath("$.logradouro").value("Rua Mestre Jerônimo")); // Corrigido aqui também
     }
 
     @Test
@@ -40,7 +40,7 @@ class CepControllerTest {
 
         when(cepService.buscarDadosCep("96202350")).thenReturn(response);
 
-        mockMvc.perform(get("/cep/96202350"))
+        mockMvc.perform(get("/api/cep/96202350")) // Corrigido aqui
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("text/plain;charset=UTF-8"))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("CEP: 96202350")))
@@ -58,3 +58,9 @@ class CepControllerTest {
         return response;
     }
 }
+
+
+
+
+
+
