@@ -68,3 +68,6 @@ Accept: application/json
   "endTime": "15:30:45"
 }
  
+### Teste de Semanas V1
+GET http://localhost:8080/api/semanas/v1?dataInicial=2023-01-01&dataFinal=2023-12-31 HTTP/1.1
+Accept: application/json
