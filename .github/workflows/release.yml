@@ -1,0 +1,34 @@
+name: Gerar Release Automática
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  gerar_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Ler versão do build.gradle
+        id: tag
+        run: |
+          VERSION=$(grep '^version =' build.gradle | sed "s/version = ['\"]\(.*\)['\"]/\\1/")
+          echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Mostrar tag criada
+        run: |
+          echo "Tag gerada: ${{ steps.tag.outputs.tag }}"
+
+      - name: Criar release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: "Release ${{ steps.tag.outputs.tag }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
