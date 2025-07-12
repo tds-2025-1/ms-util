@@ -64,7 +64,7 @@ jacocoTestCoverageVerification {
 				'br.edu.ifrs.riogrande.tads.tds.util.service.nomeValidoService',
 //				'br.edu.ifrs.riogrande.tads.tds.util.service.BusinessDayCalculatorService',
 				'br.edu.ifrs.riogrande.tads.tds.util.service.SenhaService.Forca',
-				'br.edu.ifrs.riogrande.tads.tds.util.service.UuidService',
+				// 'br.edu.ifrs.riogrande.tads.tds.util.service.UuidService',
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.TimeElapsedController',
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.CepController',
 //				'br.edu.ifrs.riogrande.tads.tds.util.controller.CpfController',
@@ -74,7 +74,7 @@ jacocoTestCoverageVerification {
 //				'br.edu.ifrs.riogrande.tads.tds.util.controller.PingController',
 //				'br.edu.ifrs.riogrande.tads.tds.util.controller.IpController',
 
-				'br.edu.ifrs.riogrande.tads.tds.util.controller.UuidController',
+				// 'br.edu.ifrs.riogrande.tads.tds.util.controller.UuidController',
 				'br.edu.ifrs.riogrande.tads.tds.util.controller.ColorController',
 				'br.edu.ifrs.riogrande.tads.tds.util.config.*',
 				'br.edu.ifrs.riogrande.tads.tds.util.repository.*',
