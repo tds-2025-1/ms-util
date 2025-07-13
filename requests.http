@@ -22,6 +22,19 @@ GET /ping HTTP/1.1
 Host: localhost:8080
 Accept: application/vnd.tads-ms-util.v3+json
 
+### CEP V0
+
+GET /api/cep/96202350 HTTP/1.1
+Host: localhost:8080
+Accept: text/plain
+
+
+### CEP V1
+
+GET /api/v1/cep/96202350 HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
 ### Forca Senha V1
 
 GET /api/v1/forca-senha/aaa
@@ -59,7 +72,7 @@ Content-Type: application/json
 ### TIME ELAPSED V2 (Path Versioning)
 
 POST /api/time/v2/elapsed HTTP/1.1
-Host: localhost:8081
+Host: localhost:8080
 Content-Type: application/json
 Accept: application/json
 
@@ -68,3 +81,6 @@ Accept: application/json
   "endTime": "15:30:45"
 }
  
+### Teste de Semanas V1
+GET http://localhost:8080/api/semanas/v1?dataInicial=2023-01-01&dataFinal=2023-12-31 HTTP/1.1
+Accept: application/json
