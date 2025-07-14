@@ -22,6 +22,7 @@ public class GeradorSenhaService {
         boolean minusculas = senhaConfig.isMinusculas();
         boolean numeros = senhaConfig.isNumeros();
         boolean simbolos = senhaConfig.isSimbolos();
+        
 
         if (maiusculas) caracteres.append(LETRAS_MAIUSCULAS);
         if (minusculas) caracteres.append(LETRAS_MINUSCULAS);
