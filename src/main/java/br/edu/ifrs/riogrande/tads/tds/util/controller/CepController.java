@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/cep")
+@RequestMapping("/api")
 public class CepController {
 
     private final CepService cepService;
@@ -16,12 +16,12 @@ public class CepController {
         this.cepService = cepService;
     }
 
-    // @GetMapping("/{cep}"), produces = "text/plain")
-    // public CepResponse getCepData(@PathVariable String cep) {
-    //     return cepService.buscarDadosCep(cep);
-    // }
-
-    @GetMapping(value = "/{cep}", produces = "text/plain")
+    @GetMapping(value = "/v1/cep/{cep}", produces = "application/json")
+    public CepResponse getCepDataV1(@PathVariable String cep) {
+        return cepService.buscarDadosCep(cep);
+    }
+    
+    @GetMapping(value = "/cep/{cep}", produces = "text/plain")
     public String getCepData(@PathVariable String cep) {
         CepResponse response = cepService.buscarDadosCep(cep);
         return formatarResposta(response);

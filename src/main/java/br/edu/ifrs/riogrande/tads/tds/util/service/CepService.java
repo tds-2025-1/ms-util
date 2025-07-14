@@ -15,9 +15,16 @@ public class CepService {
     }
 
     public CepResponse buscarDadosCep(String cep) {
+        if (!cep.matches("\\d{8}")) {
+            throw new IllegalArgumentException("CEP inválido: " + cep);            
+        }
         String url = "https://viacep.com.br/ws/" + cep + "/json/";
-        ResponseEntity<CepResponse> response = restTemplate.getForEntity(url, CepResponse.class);
+        try {
+        return restTemplate.getForEntity(url, CepResponse.class).getBody();
+        } catch (Exception e) {
+            throw new RuntimeException("Erro ao buscar dados do CEP: " + cep, e);
+        }
         
-        return response.getBody();
+        
     }
 }
